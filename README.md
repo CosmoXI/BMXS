@@ -1,6 +1,6 @@
 # BMXS
 
-Admin      | admin
+admin      | admin
 
 superAdmin | superAdmin
 
