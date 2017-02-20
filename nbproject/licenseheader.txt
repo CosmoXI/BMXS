@@ -1,0 +1,9 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Projet Dynamique année 2016 - 2017
+${licensePrefix}Damien Colige
+${licensePrefix}BMX Soumagne
+<#if licenseLast??>
+${licenseLast}
+</#if>

@@ -1,0 +1,177 @@
+/*******************************/
+/* 0: RESET                    */
+/* 1: TYPOGRAPHIE              */
+/* 2: TOP MENU                 */
+/* 3: SITE HEADER              */
+/*     3.1. Logo & Recherche   */
+/*     3.2. Menu principale    */
+/* 4: CONTENT                  */
+/*     4.1. Featured Blocks    */
+/*     4.2. Liste events       */
+/* 5: FOOTER                   */
+/*                             */
+/*                             */
+/*******************************/
+
+/* 0: RESET */
+  * ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: 100%;
+  }
+  body {
+    font-size: 14px;
+    background-image: url("../images/bg-pt.png");
+    background-size: auto;
+    background-repeat: repeat;
+    color: #666;
+  }
+  ul {
+    list-style: none;
+  }
+/* 2: TOP MENU */
+  .toprow {
+    width: 100%;
+    height: 40px;
+    background-color: #333366;
+  }
+  .top-menus li {
+    display: inline;
+    line-height: 40px;
+    font-size: 12px;
+  }
+    .top-menus li:first-child a {
+      border-left: 1px solid rgba(0, 0, 0, .1)
+    }
+    .top-menus i {
+      font-size: 15px;
+    }
+    .top-menus a {
+      color: #fff;
+      opacity: .8;
+      padding: 0 12px;
+      border-right: 1px solid rgba(0, 0, 0, .1);
+      display: inline-block;
+      text-decoration: none;
+    }
+    .top-menus a:hover{
+    opacity: 1;
+    color:#fff;
+  }
+
+/* 3: SITE HEADER */
+  .site-header{
+    width: 100%;
+  }
+  /* 2.1. Logo & Recherche */
+    .site-header .topbar {
+      z-index: 3;
+      height: 115px;
+      background-color: rgba(204, 204, 255, .6); 
+    }
+    .site-header .logo {
+      margin-top: 5px; 
+    }
+    .site-header .top-search {
+      margin-top: 37px;
+      width: 50%;
+      float: right;
+    }
+  /* 2.2. Menu principale */
+    .main-menu {
+      background-color: rgba(209, 52, 52, .8);
+    }
+      .nav-tabs.nav-justified > li > a {
+        color: #fff;
+        border-bottom: none;
+      }
+      .nav-tabs.nav-justified > li > a:hover {
+        background-color: #d13434;
+        border: none;
+      }
+      .nav-tabs.nav-justified > li > a:focus {
+        background-color: #red;
+        border: none;
+      }
+/* 4: CONTENT */
+  /* 4.1. Featured Blocks */
+    .featured-block {
+      margin-top: 20px;
+    }
+      .featured-block strong {
+        display: inline-block;
+        position: absolute;
+        padding: 5px 20px;
+        background-color: #d13434;
+        color: #fff;
+        font-size: 18px;
+        left: 5px;
+        bottom: 30px;
+        z-index: 10;
+      }
+      .featured-block:hover strong {
+        bottom: 58px;
+        transition: bottom .3s;
+      }
+      .featured-block .more {
+        background-color: #fff;
+        color: #333;
+        display: inline-block;
+        padding: 5px 20px 5px 30px;
+        position: absolute;
+        left: 10px;
+        bottom: 30px;
+        z-index: 9;
+      }
+    /* 4.2 Liste events */
+      .events-listing li {
+        width: 100%;
+        float: left;
+        border-bottom: 1px solid #333;
+      }
+      .events-listing .item div {
+        float: left;
+        
+      }
+        .event-date {
+          width: 15%;
+          text-align: center;
+          text-transform: uppercase;
+        }
+          .event-date .date {
+            font-size: 30px;
+            font-weight: 700;
+            display: block;
+          }
+          .event-date .month {
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #999;
+            display: block;
+            margin-bottom: 0px;
+          }
+        .event-detail {
+          width: 70%;
+        }
+        .event-url {
+          width: 15%;
+          text-align: right;
+        }
+/* 5: FOOTER */
+  .site-footer {
+    padding-top: 20px;
+    background-color: #f2f2f2;
+  }
+    .site-footer h4 {
+      padding-bottom: 5px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #333;
+      text-transform: uppercase;
+      border-bottom: 1px solid #d1d1d1
+    }
+  .site-footer-bottom {
+    background-color: #e1e1e1;
+  }
