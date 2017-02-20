@@ -17,7 +17,7 @@ class Database {
     public function __construct(){
         $this->db_name = 'bmxs_00.1';
         $this->db_user = 'root';
-        $this->db_pass = 'nbuser';
+        $this->db_pass = '';
         $this->db_host = 'localhost';
     }
     
