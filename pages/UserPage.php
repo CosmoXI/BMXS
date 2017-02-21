@@ -5,49 +5,51 @@
  * Damien Colige
  * BMX Soumagne
  */
-require_once 'Pages.php';
 
-class UserPage extends Pages {
+class UserPage {
     
+    private static $pdo;
+    private static $instance;
+
+
     public function __construct() {
          $pdo = new Database();
-         $this->pdo = $pdo->getPDO();   
+         self::$pdo = $pdo->getPDO();   
     }
-
-/*
-    public function render() {
-        if(isset($_SESSION['nv'])){
-            header('location: ../public_html/index.php?page=admin');
-        } else {
-            require_once '../template/login.php';            
-        }
-    }
- */   
-    public function login() {
+  
+    public static function login() {
         
         $erreur = false;
         
-        if (!empty($_POST)){
+        if (empty($_POST)){
             
+            require_once '../template/login.php'; 
+        
+        } else {
+            
+            // Instanciation pour accéder au parametre pdo
+            if (is_null(self::$pdo)) {
+                self::$instance = new UserPage();
+            }
+
             $sql = 'SELECT idusers, name, pass, niveau'
             . ' FROM users'
             . ' WHERE name = :name';
 
-            $req = $this->pdo->prepare($sql);
+            $req = self::$pdo->prepare($sql);
             $req->execute(['name' => $_POST['username']]);
 
             $data = $req->fetchObject();
-
+            
+            // Vérification du mot de passe et gestion d'erreur
             if($data && password_verify($_POST['password'], $data->pass)) {
                 $_SESSION['id'] = $data->idusers;
                 $_SESSION['nv'] = $data->niveau;
-                $this->render();
+                header('location: ?page=admin');
             } else {
                 $erreur = true;
-            }            
-        }
-        
-        require_once '../template/login.php'; 
+            }        
+        } 
         
     }
     
@@ -55,3 +57,22 @@ class UserPage extends Pages {
 
 //var_dump(password_hash('moderateur', PASSWORD_DEFAULT));
 //var_dump(password_verify('admin', '$2y$10$SZfgYMv6VCq7FxDA8.zh6u7UtNXtmCwj7609SOzNdBXCkGVGgpFrK'));
+
+/*
+ *         $erreur = false;
+        var_dump($_POST);
+        
+        if (empty($_POST)){
+            UserPage::login(); 
+        }
+         else {
+            $erreur = true;
+        }    
+        
+        if ($erreur) {
+            echo 'Erreur de connexion';
+            //require_once '../template/login.php'; 
+        } else {
+            //require_once '../template/back.php';            
+        }
+ */
