@@ -56,12 +56,11 @@ class Pages {
         // Préparation des données
         $req = $this->pdo->prepare($sql);
         $req->execute();
+        
         // Récupération des données sous forme d'objet
         while ($menu = $req->fetchObject()){ 
-            echo '<li><a href="?page='.$menu->slug.'">'.$menu->link.'</a><li>';
+            echo '<li><a href="?page='.$menu->slug.'">'.$menu->link.'</a></li>';
         }
-        
-        
     }
     
     public function menuAdmin() {
