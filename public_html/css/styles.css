@@ -7,9 +7,11 @@
 /*     3.2. Menu principale    */
 /* 4: CONTENT                  */
 /*     4.1. Featured Blocks    */
-/*     4.2. Liste events       */
+/*     4.2. Listes             */
+/*      4.2.1 Liste Events     */
+/*      4.2.2 Liste Actus      */
 /* 5: FOOTER                   */
-/*                             */
+/* 6: FOOTER Bottom            */
 /*                             */
 /*******************************/
 
@@ -30,6 +32,10 @@
   }
   ul {
     list-style: none;
+  }
+  .spacer {
+    clear: both;
+    width: 100%;
   }
 /* 2: TOP MENU */
   .toprow {
@@ -65,7 +71,7 @@
   .site-header{
     width: 100%;
   }
-  /* 2.1. Logo & Recherche */
+  /* 3.1. Logo & Recherche */
     .site-header .topbar {
       z-index: 3;
       height: 115px;
@@ -79,7 +85,7 @@
       width: 50%;
       float: right;
     }
-  /* 2.2. Menu principale */
+  /* 3.2. Menu principale */
     .main-menu {
       background-color: rgba(209, 52, 52, .8);
     }
@@ -87,12 +93,9 @@
         color: #fff;
         border-bottom: none;
       }
-      .nav-tabs.nav-justified > li > a:hover {
-        background-color: #d13434;
-        border: none;
-      }
+      .nav-tabs.nav-justified > li > a:hover,
       .nav-tabs.nav-justified > li > a:focus {
-        background-color: #red;
+        background-color: #d13434;
         border: none;
       }
 /* 4: CONTENT */
@@ -125,12 +128,28 @@
         bottom: 30px;
         z-index: 9;
       }
-    /* 4.2 Liste events */
-      .events-listing li {
+    /* 4.2 Listes */
+    .listing h3 {
+      margin-bottom: 0px;
+      padding: 2px;
+      padding-left: 10px;
+      color: #fff;
+      background-color: rgba(209, 52, 52, .8);
+      border-bottom: 2px solid #333;
+    }
+    .listing li {
         width: 100%;
         float: left;
         border-bottom: 1px solid #333;
+        background-color: lavender;
       }
+    .listing .meta-data {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 12px;
+        font-style: italic;
+      } 
+      /* 4.2.1 Liste Events */
       .events-listing .item div {
         float: left;
         
@@ -141,6 +160,7 @@
           text-transform: uppercase;
         }
           .event-date .date {
+            margin-bottom: -8px;
             font-size: 30px;
             font-weight: 700;
             display: block;
@@ -155,12 +175,31 @@
         .event-detail {
           width: 70%;
         }
+          .event-detail h4 {
+            margin-bottom: 0px;
+          }
+          .event-detail .time {
+            font-style: italic;
+          }
         .event-url {
           width: 15%;
           text-align: right;
+          margin-top: 1.5%;
+          padding-right: 1.5%;
         }
+      /* 4.2.2 Liste Actus */
+      .post-listing .img-thumbnail {
+        margin: 5px;
+      }
+      .post-title h2 {
+        margin-bottom: 0px;
+      }
+      .post-listing .item p {
+        margin-right: 10px;
+      }
 /* 5: FOOTER */
   .site-footer {
+    margin-top: 20px;
     padding-top: 20px;
     background-color: #f2f2f2;
   }
@@ -172,6 +211,15 @@
       text-transform: uppercase;
       border-bottom: 1px solid #d1d1d1
     }
+/* 6: FOOTER Bottom */
   .site-footer-bottom {
+    padding: 10px 0;
     background-color: #e1e1e1;
+  }
+  .site-footer-bottom p {
+    margin-bottom: 0;
+    font-size: 12px;
+  }
+  .site-footer-bottom .social-icons {
+    text-align: right;
   }
