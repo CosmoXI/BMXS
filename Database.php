@@ -28,7 +28,7 @@ class Database {
         if (is_null($this->pdo)) {
             $pdo = new PDO( 'mysql:dbname=' . $this->db_name . 
                             ';host=' . $this->db_host .
-                            ';port=3307;charset=utf8', 
+                            ';port=3306;charset=utf8', 
                             $this->db_user, 
                             $this->db_pass);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
